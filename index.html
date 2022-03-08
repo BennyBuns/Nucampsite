@@ -32,9 +32,10 @@
                     <h2>a better way to camp</h2>
                 </div>
                 <div class="col-md-4 col-xl-2 mt-4">
-                    <button type="button" data-toggle="modal" data-target="#reserveModal" id="#reserveModal">Reserve a Campsite</button>
+                    <button type="button" data-toggle="modal" data-target="#reserveModal" id="#reserveModal">Reserve a
+                        Campsite</button>
                 </div>
-                
+
 
             </div>
         </div>
@@ -74,10 +75,12 @@
                                 <label class="col-sm-6 col-form-label"></label>
                                 <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-success active">
-                                        <input type="radio" name="siteType" id="siteTent" Value="tent" autocomplete="off" checked> Tent
+                                        <input type="radio" name="siteType" id="siteTent" Value="tent"
+                                            autocomplete="off" checked> Tent
                                     </label>
                                     <label class="btn btn-primary">
-                                        <input type="radio" name="siteType" id="siteRV" Value="RV" autocomplete="off" checked> RV
+                                        <input type="radio" name="siteType" id="siteRV" Value="RV" autocomplete="off"
+                                            checked> RV
                                     </label>
                                 </div>
                             </div>
@@ -172,10 +175,12 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="img/breadcrumb-trail.jpg" alt="Breadcrumb Trail Campground" />
+                            <img class="d-block w-100" src="img/breadcrumb-trail.jpg"
+                                alt="Breadcrumb Trail Campground" />
                             <div class="carousel-caption">
                                 <h3>Breadcrumb Trail Campground</h3>
-                                <p class="d-none d-sm-block">Let Nucamp be your guide to this off-the-beaten-path, hike-in-only campground. </p>
+                                <p class="d-none d-sm-block">Let Nucamp be your guide to this off-the-beaten-path,
+                                    hike-in-only campground. </p>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -183,7 +188,9 @@
                             <div class="carousel-caption">
                                 <div class="carousel-caption">
                                     <h3>React Lake Campground</h3>
-                                    <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers. </p>
+                                    <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this
+                                        campground on the shores of the pristine React Lake is a favorite for fly
+                                        fishers. </p>
                                 </div>
                             </div>
                         </div>
@@ -192,19 +199,23 @@
                             <div class="carousel-caption">
                                 <div class="carousel-caption">
                                     <h3>Chrome River Campground</h3>
-                                    <p class="d-none d-sm-block">Spend a few sunny days and starry nights beneath a canopy of old-growth firs at this enchanting spot by the Chrome River.</p>
+                                    <p class="d-none d-sm-block">Spend a few sunny days and starry nights beneath a
+                                        canopy of old-growth firs at this enchanting spot by the Chrome River.</p>
                                 </div>
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon">
-                        </span>
+                            <span class="carousel-control-prev-icon">
+                            </span>
                         </a>
                         <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
-                        <span class="sr-only">Previous</span>
-                        <span class="carousel-control-next-icon"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                            <span class="sr-only">Previous</span>
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <i class="fa fa-pause"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -301,6 +312,23 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function() {
+            $(".carousel").carousel( { interval: 2000 } );
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("i").hasClass("fa-pause")) {
+                    $(".carousel").carousel("pause");
+                    $("#carouselButton").children("i").removeClass("fa-pause");
+                    $("#carouselButton").children("i").addClass("fa-play");
+                } else {
+                    $(".carousel").carousel("cycle");
+                    $("#carouselButton").children("i").removeClass("fa-play");
+                    $("#carouselButton").children("i").addClass("fa-pause"); 
+                }
+            });
+        });
+    </script>
 
 
 </body>
